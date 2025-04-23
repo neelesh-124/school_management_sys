@@ -12,10 +12,28 @@ const pool = mysql
   })
   .promise();
 
-async function getSchoolsData() {
+export async function getAllSchoolsData() {
   const [result] = await pool.query("select * from schools");
   return result;
 }
 
-const schools = await getSchoolsData();
-console.log(schools);
+export async function getSchoolById(id) {
+  const [rows] = await pool.query(
+    `
+    select * 
+    from Schools
+    where id = ?`,
+    [id]
+  );
+  return rows[0];
+}
+
+export async function createSchool(id, name, address, latitude, longitude) {
+  const [result] = await pool.query(
+    `
+    insert into Schools (id, name, address, latitude, longitude)
+    values (?, ?, ?, ?, ?)`,
+    [id, name, address, latitude, longitude]
+  );
+  return result;
+}

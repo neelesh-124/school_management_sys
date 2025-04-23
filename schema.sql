@@ -3,10 +3,10 @@ USE School_Management;
 
 CREATE TABLE Schools
 (
-    id INTEGER PRIMARY KEY,
+    id VARCHAR(500) PRIMARY KEY,
     name VARCHAR (255) NOT NULL,
-    address VARCHAR (500),
-    latitude FLOAT,
-    longitude FLOAT
+    address VARCHAR (500) NOT NULL,
+    latitude FLOAT NOT NULL,
+    longitude FLOAT NOT NULL
 );
 
