@@ -55,7 +55,7 @@ export async function listSchool(req, res) {
       userLong,
       school.latitude,
       school.longitude
-    );
+    ).toFixed(3);
     return { ...school, distance };
   });
 
