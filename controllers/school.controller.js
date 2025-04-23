@@ -1,4 +1,4 @@
-import { createSchool, getAllSchoolsData } from "./database.js";
+import { createSchool, getAllSchoolsData } from "../database.js";
 import { nanoid } from "nanoid";
 
 export function haversine(lat1, lon1, lat2, lon2) {
